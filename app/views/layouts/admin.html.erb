@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Jd 后台</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <div class="container-fluid col-xs-12">
+      <%= render "common/navbar"%>
+     <div class="col-xs-2" style="margin-top:100px;">
+      <h1>sidebar</h1>
+     </div>
+     <div class="col-xs-10">
+
+     <%= render "common/flashes"%>
+    <%= yield %>
+   </div>
+    </div>
+  </body>
+</html>
