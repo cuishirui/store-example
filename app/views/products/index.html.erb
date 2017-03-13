@@ -1,0 +1,18 @@
+<h1>products</h1>
+<table class="table">
+  <thead>
+    <th>#</th>
+    <th>title</th>
+    <th>description</th>
+    <th>option</th>
+  </thead>
+  <tbody>
+    <% @products.each do |product| %>
+    <tr>
+      <td><%= product.id%></td>
+      <td><%= link_to product.title, admin_product_path(product)%></td>
+      <td><%= simple_format(product.description)%></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
