@@ -3,5 +3,9 @@
   <%= @product.description%>
 </div>
 <div class="pull-right">
-  <%= link_to("add to cart", add_to_cart_product_path(@product),method: :post, class: "btn btn-danger")%>
+  <% if @product.quantity.present? && @product.quantity > 0%>
+    <%= link_to("add to cart", add_to_cart_product_path(@product),method: :post, class: "btn btn-danger")%>
+  <% else %>
+    sorry product sell out
+  <% end %>
 </div>

@@ -4,6 +4,7 @@
     <th>#</th>
     <th>title</th>
     <th>description</th>
+    <th>quantity</th>
     <th>option</th>
   </thead>
   <tbody>
@@ -12,6 +13,7 @@
       <td><%= product.id%></td>
       <td><%= link_to product.title, product_path(product)%></td>
       <td><%= simple_format(product.description)%></td>
+      <td><%= product.quantity%></td>
       <td><%= product.price%></td>
     </tr>
     <% end %>
