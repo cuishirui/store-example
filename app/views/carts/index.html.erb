@@ -1,5 +1,8 @@
 <h1>购物车</h1>
 <div class="container">
+  <%= link_to("clean cart", clean_carts_path, method: :delete,
+                             class: "btn btn-default pull-right",
+                               data: {confirm: "are you sure?"})%>
   <table class="table">
     <thead>
       <th>#</th>
