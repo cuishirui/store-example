@@ -1,0 +1,19 @@
+<h1>购物车</h1>
+<div class="container">
+  <table class="table">
+    <thead>
+      <th>#</th>
+      <th>title</th>
+      <th>description</th>
+    </thead>
+    <tbody>
+      <% current_cart.cart_items.each do |cart_item|%>
+      <tr>
+        <td><%= cart_item.product.id%></td>
+        <td><%= cart_item.product.title%></td>
+        <td><%= cart_item.product.description%></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
