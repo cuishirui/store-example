@@ -12,6 +12,7 @@
       <td><%= product.id%></td>
       <td><%= link_to product.title, product_path(product)%></td>
       <td><%= simple_format(product.description)%></td>
+      <td><%= product.price%></td>
     </tr>
     <% end %>
   </tbody>

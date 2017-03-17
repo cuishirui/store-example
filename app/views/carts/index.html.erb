@@ -5,6 +5,8 @@
       <th>#</th>
       <th>title</th>
       <th>description</th>
+      <th>quantity</th>
+      <th>price</th>
     </thead>
     <tbody>
       <% current_cart.cart_items.each do |cart_item|%>
@@ -12,8 +14,24 @@
         <td><%= cart_item.product.id%></td>
         <td><%= cart_item.product.title%></td>
         <td><%= cart_item.product.description%></td>
+        <td><%= cart_item.quantity%></td>
+        <td><%= cart_item.product.price%></td>
       </tr>
       <% end %>
     </tbody>
   </table>
+</div>
+<br>
+<div class="total clearfix">
+  <span class="pull-right">
+    <span>
+
+      total: <%= render_cart_total_price(current_cart) %> rmb
+    </span>
+  </span>
+</div>
+
+<br>
+<div class="checkout clearfix">
+  <%= link_to("checkout", "#", method: :post, class: "btn btn-danger pull-right")%>
 </div>
