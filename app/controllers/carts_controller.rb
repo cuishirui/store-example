@@ -5,4 +5,6 @@ class CartsController < ApplicationController
     flash[:warning] = "already clean"
     redirect_to carts_path
   end
+
+  
 end
