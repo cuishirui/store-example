@@ -1,0 +1,29 @@
+<h1>cart</h1>
+  <div class="pull-right">
+    <%= link_to("clear cart", clean_carts_path, method: :delete, class: "btn btn-danger", data: {confirm: "are your suer?"})%>
+  </div>
+<table class="table">
+  <thead>
+    <th>title</th>
+    <th>price</th>
+    <th>quantity</th>
+  </thead>
+  <tbody>
+    <% current_cart.cart_items.each do |cart_item|%>
+     <tr>
+      <td><%= cart_item.product.title%></td>
+      <td><%= cart_item.product.price%></td>
+      <td><%= cart_item.quantity%></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<hr>
+<div class="pull-right">
+
+  total <%= render_total(current_cart) %> rmb
+</div>
+<hr>
+<div class="pull-right clearfix">
+  <%= link_to("checkout", "#",method: :post, class: "btn btn-danger")%>
+</div>
