@@ -5,6 +5,12 @@
     </div>
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
+        <li>
+          <%= link_to carts_path do %>
+            cart <i class="fa fa-shopping-cart"> </i>
+            (<%= current_cart.products.count%>)
+          <% end %>
+        </li>
         <% if !current_user%>
          <li><%= link_to("signup", new_user_registration_path)%></li>
          <li><%= link_to("login", new_user_session_path)%></li>
