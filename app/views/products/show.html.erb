@@ -2,6 +2,11 @@
 <div class="container">
   <%= @product.description%>
 </div>
+<div class="container">
+  <% @product.sizes.each do |size|%>
+    <%= link_to size.shape, add_to_size_size_path(size), method: :post%>
+  <% end %>
+</div>
 <div class="pull-right">
   <%= link_to("add to cart", add_to_cart_product_path(@product), method: :post, class: "btn btn-default")%>
 </div>

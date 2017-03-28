@@ -6,6 +6,7 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find(params[:id])
+    @product.sizes = Size.all 
   end
 
   def add_to_cart
@@ -16,4 +17,5 @@ class ProductsController < ApplicationController
       redirect_to :back
     end
   end
+
 end
