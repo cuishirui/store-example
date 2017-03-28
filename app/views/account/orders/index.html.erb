@@ -1,0 +1,17 @@
+<h1>orders</h1>
+<table class="table">
+  <thead>
+    <th>#</th>
+    <th>order</th>
+    <th>create_at</th>
+  </thead>
+  <tbody>
+    <% @orders.each do |order|%>
+      <tr>
+        <td><%= link_to order.id, order_path(order.token)%></td>
+        <td><%= order.created_at.to_s(:long)%></td>
+        <td></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
